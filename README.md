@@ -12,8 +12,25 @@ This repo is to act as a supplement to the work provided in our paper titled ***
 
 ## Usage
 
+### Prerequisites
+
+We provide an ```environment.yml``` file that includes all of our packages. This has been tested in Python 3.11.5 on a system with the following specs:
+```shell
+OS: Ubuntu 20.04 LTS
+Python Version: 3.10.10
+GPU: NVIDIA GeForce RTX 3080
+CPU: Intel Core i9-10920X 12C/24T
+RAM: 64 GB
+```
+
+We recommend using a virtual environment such as virtualenv or Anaconda. We used Anaconda during our testing and will refer to the instructions as follows. To install and configure the environment, run:
+
+```shell
+conda env create -f environment.yml
+```
+
+Our implementation is built upon two other implementations of proximal policy optimisation (PPO) and latent space manifolds. Our PPO implementation is based on that by [Nikhil Barhate](https://github.com/nikhilbarhate99/PPO-PyTorch) and our latent space manifold implementation is adapted from the work in the paper ['Learning Riemannian Manifolds for Geodesic Motion Skills'](https://doi.org/10.15607/RSS.2021.XVII.082) by Beik-Mohammadi et al. and their implementation provided [here](https://github.com/boschresearch/GeodesicMotionSkills).
+
 ### Single Script Runfile
 
-### Training the Latent Space Manifold
-
-### Training the Geodesic Path Planner
+### Dockerfile Implementation
