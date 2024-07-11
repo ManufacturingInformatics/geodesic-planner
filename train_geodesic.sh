@@ -12,5 +12,7 @@ do
     esac
 done
 
-echo "Number of episodes: ${episodes}"
+echo "Number of episodes: ${episodes} | Repetition: ${rep}"
 python3 ./geodesic-learner/train_geodesic.py -e ${episodes} -p ${path} -r ${rep}
+echo "Plotting results..."
+python3 ./geodesic-learner/plot_geodesic.py -r ${rep}

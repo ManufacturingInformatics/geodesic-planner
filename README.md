@@ -10,7 +10,7 @@ This repo is to act as a supplement to the work provided in our paper titled ***
 
 This will continued to be updated as it is an ongoing piece of research.  
 
-**UPDATE (Date here):** Our paper was accepted to IEEE/RSJ IROS 2024!
+**UPDATE 30-06-2024:** Our paper was accepted to IEEE/RSJ IROS 2024!
 
 ## Usage
 

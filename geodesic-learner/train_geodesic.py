@@ -155,7 +155,7 @@ def train() -> None:
     # Save the model for loading later
     torch.save(agent.policy.actor.state_dict(), '{}/policy_{}.pt'.format(args.path, datetime.now().date()))     
     df = pl.from_numpy(param_storage, schema=['ax', 'bx', 'cx', 'dx', 'ay', 'by', 'cy', 'dy']) 
-    df.write_parquet('{}/policy_params_{}_rep_{}.parquet'.format(args.path, datetime.now().date(), args.rep))
+    df.write_parquet('{}/policy_params_{}.parquet'.format(args.path, args.rep))
 
 if __name__ == '__main__':
     train()
