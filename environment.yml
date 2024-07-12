@@ -142,7 +142,6 @@ dependencies:
       - scipy==1.11.3
       - shimmy==1.3.0
       - stable-baselines3==2.2.1
-      - stochman==0.1.1
       - sympy==1.12
       - tensorboard==2.16.2
       - tensorboard-data-server==0.7.2

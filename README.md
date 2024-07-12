@@ -10,7 +10,7 @@ This repo is to act as a supplement to the work provided in our paper titled ***
 
 This will continued to be updated as it is an ongoing piece of research.  
 
-**UPDATE 30-06-2024:** Our paper was accepted to IEEE/RSJ IROS 2024!
+**UPDATE 30/06/2024:** Our paper was accepted to IEEE/RSJ IROS 2024!
 
 ## Usage
 
@@ -26,13 +26,42 @@ CPU: Intel Core i9-10920X 12C/24T
 RAM: 64 GB
 ```
 
+Our implementation is built upon two other implementations of proximal policy optimisation (PPO) and latent space manifolds. Our PPO implementation is adapted from that by [Nikhil Barhate](https://github.com/nikhilbarhate99/PPO-PyTorch) and our latent space manifold implementation is adapted from the work in the paper ['Learning Riemannian Manifolds for Geodesic Motion Skills'](https://doi.org/10.15607/RSS.2021.XVII.082) by Beik-Mohammadi et al. and their implementation provided [here](https://github.com/boschresearch/GeodesicMotionSkills).
+
+Some prerequisities not included in the environment file are the packages `stochman` and `s-vae-pytorch`. The full details for how to install these can be found in the [https://github.com/boschresearch/GeodesicMotionSkills](GeodesicMotionSkills), which we have added here for convenience.
+
+```shell
+# Clone our repository
+git clone git@github.com:boschresearch/GeodesicMotionSkills.git
+
+# Clone Stochman from here (in the same directory)
+git clone https://github.com/MachineLearningLifeScience/stochman
+cd stochman/
+git checkout 1d092e0dffef179b706542f0693b813a8370fcf8
+cd ..
+
+# Clone hyperspherical vae from here (in the same directory)
+git clone https://github.com/hadibeikm/s-vae-pytorch.git
+```
+
 We recommend using a virtual environment such as virtualenv or Anaconda. We used Anaconda during our testing and will refer to the instructions as follows. To install and configure the environment, run:
 
 ```shell
+cd geodesic-planner
+
+# Create the environment
 conda env create -f environment.yml
+
+# Navigate to the hyperspherical VAE repo and install
+cd ../s-vae-pytorch
+pip install -e .
+
+# Navigate to the stochman repo and install
+cd ../stochman
+pip install -e .
 ```
 
-Our implementation is built upon two other implementations of proximal policy optimisation (PPO) and latent space manifolds. Our PPO implementation is adapted from that by [Nikhil Barhate](https://github.com/nikhilbarhate99/PPO-PyTorch) and our latent space manifold implementation is adapted from the work in the paper ['Learning Riemannian Manifolds for Geodesic Motion Skills'](https://doi.org/10.15607/RSS.2021.XVII.082) by Beik-Mohammadi et al. and their implementation provided [here](https://github.com/boschresearch/GeodesicMotionSkills).
+Once this is done, you can return to our repo to run the code. 
 
 ### Training the Constraint Manifold
 
