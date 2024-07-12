@@ -3,7 +3,7 @@ episodes=''
 path=''
 rep=''
 
-while getopts e:p:r flag
+while getopts e:p:r: flag
 do
     case "${flag}" in
         e) episodes=${OPTARG};;

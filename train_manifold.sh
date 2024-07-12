@@ -3,7 +3,7 @@ mode=''
 batch=''
 num_datapoints=''
 
-while getopts m:b:d flag
+while getopts m:b:d: flag
 do
     case "${flag}" in
         m) mode=${OPTARG};;

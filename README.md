@@ -28,7 +28,7 @@ RAM: 64 GB
 
 Our implementation is built upon two other implementations of proximal policy optimisation (PPO) and latent space manifolds. Our PPO implementation is adapted from that by [Nikhil Barhate](https://github.com/nikhilbarhate99/PPO-PyTorch) and our latent space manifold implementation is adapted from the work in the paper ['Learning Riemannian Manifolds for Geodesic Motion Skills'](https://doi.org/10.15607/RSS.2021.XVII.082) by Beik-Mohammadi et al. and their implementation provided [here](https://github.com/boschresearch/GeodesicMotionSkills).
 
-Some prerequisities not included in the environment file are the packages `stochman` and `s-vae-pytorch`. The full details for how to install these can be found in the [https://github.com/boschresearch/GeodesicMotionSkills](GeodesicMotionSkills), which we have added here for convenience.
+Some prerequisities not included in the environment file are the packages `stochman` and `s-vae-pytorch`. The full details for how to install these can be found in the [GeodesicMotionSkills](https://github.com/boschresearch/GeodesicMotionSkills) repository, which we have added here for convenience.
 
 ```shell
 # Clone our repository
@@ -79,16 +79,7 @@ Then run the script:
 
 The `mode` parameter dictates whether the model is just training, testing or both. Batch size is the size of the update batches for PyTorch and the number of datapoints that are used to train the VAE manifold.
 
-If you want to alter more of the training parameters, you can directly call the Python script inside the `manifold-learner` folder with the following parameters:
-
-```shell
-python3 main.py --mode <mode> --n_samples <num samples> \
-    --epochs_kl <KL epochs> --epochs <epochs> --rbf_epochs <RBF epochs> \
-    --lr <learning rate> --latent_max <latent max> \
-    --batch_size <batch_size> --num_datapoints <num datapoints>
-```
-
-For more documentation regarding these variables, please find the variables within the code for their explanation. Further explanation can be found in the work by [Beik-Mohammedi et al.](https://github.com/boschresearch/GeodesicMotionSkills)
+For more documentation regarding the training variables, please find the variables within the code for their explanation. Further explanation can be found in the work by [Beik-Mohammedi et al.](https://github.com/boschresearch/GeodesicMotionSkills)
 
 ### Training the Geodesic Planner
 
@@ -105,12 +96,6 @@ Then you can run the script:
 ```
 
 Where `episodes` is the number of learning epochs to undergo for the policy optimisation, `path` is the save path for the model weights and `rep` determines the repitition number for this training cycle.
-
-To run the default Python script, run the following command in the `geodesic-learner` folder:
-
-```shell
-python3 train_geodesic.py --episodes <episodes> --path <path> --rep <repetitions>
-```
 
 When the training has finished, the results can be plotted as shown below which is available in the paper. It shows the learned manifold with the sub-manifold constraint applied, then the learned shortest geodesic.
 

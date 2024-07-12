@@ -18,7 +18,7 @@ def main() -> None:
     
     args = parser.parse_args()
     
-    df = pl.read_parquet('./geodesic_model/policy_params_{}.parquet'.format(args.rep))
+    df = pl.read_parquet('./geodesic-learner/data/policy_params_{}.parquet'.format(args.rep))
     
     var_measure_const = np.loadtxt('./data/heat_map.csv')
     device = torch.device('cpu')
@@ -29,9 +29,7 @@ def main() -> None:
     latent_max = 10
 
     t = np.linspace(0, 1, size)
-    # x = np.zeros((size,))
-    # y = np.zeros((size,))
-
+    
     fig, ax = plt.subplots(figsize=(3.5, 3.5))
 
     arr = df[-1].to_numpy().reshape((8,)).tolist()
@@ -57,7 +55,7 @@ def main() -> None:
     ax2.set_xticklabels([])
     ax2.set_yticklabels([])
     
-    plt.show()
+    plt.savefig('./geodesic-learner/data/learned_geodesic.png')
 
 if __name__ == "__main__":
     

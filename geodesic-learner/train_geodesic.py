@@ -49,7 +49,7 @@ def train() -> None:
     # Configure the torchquad backend.
     set_up_backend('torch', data_type='float32')
     
-    var_measure_const = np.loadtxt('../data/heat_map.csv')
+    var_measure_const = np.loadtxt('./data/heat_map.csv')
     
     ##### Environment Parameters #####
     
@@ -153,9 +153,9 @@ def train() -> None:
     print("========================================")    
     
     # Save the model for loading later
-    torch.save(agent.policy.actor.state_dict(), '{}/policy_{}.pt'.format(args.path, datetime.now().date()))     
+    torch.save(agent.policy.actor.state_dict(), '{}/data/policy_{}.pt'.format(args.path, datetime.now().date()))     
     df = pl.from_numpy(param_storage, schema=['ax', 'bx', 'cx', 'dx', 'ay', 'by', 'cy', 'dy']) 
-    df.write_parquet('{}/policy_params_{}.parquet'.format(args.path, args.rep))
+    df.write_parquet('{}/data/policy_params_{}.parquet'.format(args.path, args.rep))
 
 if __name__ == '__main__':
     train()
