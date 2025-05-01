@@ -10,7 +10,7 @@ This repo is to act as a supplement to the work provided in our paper titled ***
 
 This will continued to be updated as it is an ongoing piece of research.  
 
-**UPDATE 30/06/2024:** Our paper was accepted to IEEE/RSJ IROS 2024!
+**UPDATE 30/06/2024:** Our paper was accepted to IEEE/RSJ IROS 2024! [Read the full paper here.](https://doi.org/10.1109/IROS58592.2024.10802531)
 
 ## Usage
 
@@ -102,3 +102,17 @@ When the training has finished, the results can be plotted as shown below which 
 <p align="center">
   <img src="assets/paper-image.png" width="750">
 </p>
+
+### Citing our work
+
+To cite our work, please reference our IROS 2024 paper:
+
+```bibtex
+@inproceedings{learned_paths_2024, 
+  author={Canzini, Ethan and Pope, Simon and Tiwari, Ashutosh},
+  booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Generating Continuous Paths On Learned Constraint Manifolds Using Policy Search}, 
+  year={2024},
+  pages={5396-5401}, 
+  doi={10.1109/IROS58592.2024.10802531}}
+```
